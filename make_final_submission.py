@@ -13,7 +13,7 @@ TEST_DIR = Path("data/test/images")
 SAMPLE_SUBMISSION = Path("sample_submission.csv")
 
 CHECKPOINT = "best_mjsynth_synthtiger_sym_v2.pth"
-OUTPUT = "submission_sym_v2.csv"
+OUTPUT = "submission.csv"
 
 DEVICE = torch.device(
     "cuda" if torch.cuda.is_available() else "cpu"

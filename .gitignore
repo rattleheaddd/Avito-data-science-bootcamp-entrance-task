@@ -20,6 +20,7 @@ datasets/
 test_random_100/
 *.png
 *.jpg
+edited_submission.py
 
 # External repository
 synthtiger/
