@@ -241,6 +241,8 @@ These values are intended for comparing experiments using the same validation di
 │
 └── configs/
     └── config_orientation.yaml
+└── weights/
+    └── best_mjsynth_synthtiger_sym_v2.pth
 ```
 
 Datasets, checkpoints, virtual environments and generated submissions are excluded from Git.
@@ -264,6 +266,13 @@ Windows:
 ```
 
 For GPU training, install PyTorch and torchvision separately using the CUDA build appropriate for your system.
+
+Tested environment:
+Python 3.x
+PyTorch 2.14.0+cu132
+torchvision 0.29.0+cu132
+CUDA-enabled GPU
+BF16 support used during training/inference
 
 Then install the remaining dependencies:
 
@@ -457,12 +466,14 @@ The checker verifies:
 
 ## Notes
 
-Model checkpoints (`*.pth`), datasets and generated submission files are intentionally excluded from the repository.
+Datasets and generated submission files are intentionally excluded from the repository.
 
-The final checkpoint used during development was:
+```markdown
+The final checkpoint is included in:
+```
 
 ```text
-best_mjsynth_synthtiger_sym_v2.pth
+weights/best_mjsynth_synthtiger_sym_v2.pth
 ```
 
 The project focuses on a compact and fast solution rather than large vision architectures or model ensembles.
