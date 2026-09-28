@@ -49,7 +49,7 @@ def load_synthtiger_samples(root):
 
 
 def split_samples(samples, val_fraction=0.05, seed=42):
-     """
+    """
     Deterministically split SynthTIGER samples into train and validation subsets.
     The fixed seed ensures reproducible model comparisons.
     """

@@ -7,11 +7,11 @@ from torchvision.models import (
 
 
 class OrientationModel(nn.Module):
-    def __init__(self):
+    def __init__(self, pretrained=True):
         super().__init__()
 
         self.model = mobilenet_v3_small(
-            weights=MobileNet_V3_Small_Weights.IMAGENET1K_V1
+            weights=MobileNet_V3_Small_Weights.IMAGENET1K_V1 if pretrained else None
         )
 
         in_features = self.model.classifier[-1].in_features

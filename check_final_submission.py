@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("submission_sym_v2.csv")
+df = pd.read_csv("submission.csv")
 
 print("rows:", len(df))
 print("columns:", df.columns.tolist())

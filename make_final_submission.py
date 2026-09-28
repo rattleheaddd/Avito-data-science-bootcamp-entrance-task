@@ -34,7 +34,7 @@ transform = transforms.Compose([
 
 
 def load_model():
-    model = OrientationModel().to(DEVICE)
+    model = OrientationModel(pretrained=False).to(DEVICE)
 
     checkpoint = torch.load(
         CHECKPOINT,

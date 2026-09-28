@@ -239,13 +239,13 @@ These values are intended for comparing experiments using the same validation di
 ├── make_final_submission.py
 ├── check_final_submission.py
 │
-└── configs/
-    └── config_orientation.yaml
+├── configs/
+│   └── config_orientation.yaml
 └── weights/
     └── best_mjsynth_synthtiger_sym_v2.pth
 ```
 
-Datasets, checkpoints, virtual environments and generated submissions are excluded from Git.
+Datasets, intermediate checkpoints, virtual environments and generated submissions are excluded from Git. The final checkpoint is included in weights/best_mjsynth_synthtiger_sym_v2.pth.
 
 ---
 
@@ -268,11 +268,14 @@ Windows:
 For GPU training, install PyTorch and torchvision separately using the CUDA build appropriate for your system.
 
 Tested environment:
+
+```text
 Python 3.x
 PyTorch 2.14.0+cu132
 torchvision 0.29.0+cu132
 CUDA-enabled GPU
 BF16 support used during training/inference
+```
 
 Then install the remaining dependencies:
 
@@ -325,10 +328,12 @@ The custom configuration used for this project is stored in:
 configs/config_orientation.yaml
 ```
 
-Example generation command (run from the cloned SynthTIGER repository root):
+Clone SynthTIGER into the synthtiger/ subdirectory of this project, install it following its README, and run the commands below from this project root. The configuration stays in this project's configs/ directory. Its resources/ paths are resolved from the cloned SynthTIGER root; ensure the referenced corpora, fonts, images and colormap are present there.
 
 ```bash
-synthtiger -o ../data/synthtiger_train -c 300000 -w 6 -s 42 -v examples/synthtiger/template.py SynthTiger config_orientation.yaml
+cd synthtiger
+synthtiger -o ../data/synthtiger_train -c 300000 -w 6 -s 42 -v examples/synthtiger/template.py SynthTiger ../configs/config_orientation.yaml
+cd ..
 ```
 
 The exact number of workers should be adjusted according to available RAM.
@@ -468,9 +473,7 @@ The checker verifies:
 
 Datasets and generated submission files are intentionally excluded from the repository.
 
-```markdown
 The final checkpoint is included in:
-```
 
 ```text
 weights/best_mjsynth_synthtiger_sym_v2.pth
