@@ -27,6 +27,8 @@ synthtiger/
 
 # Model checkpoints
 *.pth
+!weights/
+!weights/best_mjsynth_synthtiger_sym_v2.pth
 *.pt
 *.ckpt
 *.onnx

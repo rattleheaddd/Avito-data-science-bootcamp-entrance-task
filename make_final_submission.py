@@ -12,7 +12,7 @@ from dataset import resize_with_padding
 TEST_DIR = Path("data/test/images")
 SAMPLE_SUBMISSION = Path("sample_submission.csv")
 
-CHECKPOINT = "best_mjsynth_synthtiger_sym_v2.pth"
+CHECKPOINT = "weights/best_mjsynth_synthtiger_sym_v2.pth"
 OUTPUT = "submission.csv"
 
 DEVICE = torch.device(
